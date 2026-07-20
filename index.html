@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Multiverse Hub - Home</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <h1 id="site-title">Marvel vs DC: Multiverse Hub</h1>
+            <nav>
+                <a class="active" href="index.html">Home</a>
+                <a href="movies.html">Movies</a>
+                <a href="characters.html">Characters</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+
+
+        <main>
+
+            <!-- This is where our main content goes. Marvel vs DC - Multiverse Hub -->
+            <section class="hero">
+                <h2>Choose Your Universe</h2>
+                <p>Explore movies and characters, then discover which hero or villain matches you.</p>
+                <button id="theme-button">Switch to DC</button>
+            </section>
+
+            <section class="controls">
+                <label for="home-search">Quick search:</label>
+                <input id="home-search" type="text" placeholder="Try Batman or Wolverine">
+                <button id="search-button">Search</button>
+            </section>
+
+            <section class="video-container">
+                <iframe width="1013" height="570" src="https://www.youtube.com/embed/uRp-gmlPn00" title="Top 10 Best DC and Marvel Crossovers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </section>
+
+            <!-- The section ids remain consistent across both themes -->
+            <section id="featured" class="card-grid">
+
+                <article class="card">
+                    <img id="feature-image-one" src="images/Wolverine.png" alt="Wolverine">
+                    <h3 id="feature-name-one">Wolverine</h3>
+                    <p id="feature-text-one">A tough X-Man with healing powers and adamantium claws.</p>
+                </article>
+
+                <article class="card">
+                    <img id="feature-image-two" src="images/Loki.png" alt="Loki">
+                    <h3 id="feature-name-two">Loki</h3>
+                    <p id="feature-text-two">The clever trickster always has another plan.</p>
+                </article>
+
+                <article class="card">
+                    <h3 id="movie-title">Marvel Movie Pick</h3>
+                    <p id="movie-text">Avengers: Endgame brings many Marvel heroes together for one final battle.</p>
+                    <a class="button" href="movies.html">Browse Movies</a>
+                </article>
+
+            </section>
+
+        </main> 
+
+        <footer>
+            <p>Multiverse Hub - A fan-made student project</p>
+        </footer>
+
+        <!-- Our Inline scripts. This is we put some JS code to sort characters -->
+        <script>
+            var dcMode = false;
+            var themeButton = document.querySelector("#theme-button");
+
+            function changeTheme() {
+                dcMode = !dcMode;
+                if (dcMode) {
+                    document.body.className = "dc-theme";
+                    themeButton.innerHTML = "Switch to Marvel";
+                    document.querySelector("#feature-image-one").src = "images/batman.png";
+                    document.querySelector("#feature-image-one").alt = "Batman";
+                    document.querySelector("#feature-name-one").innerHTML = "Batman";
+                    document.querySelector("#feature-text-one").innerHTML = "Gotham's detective relies on courage, skill and preparation.";
+                    document.querySelector("#feature-image-two").src = "images/wonder-woman.jpg";
+                    document.querySelector("#feature-image-two").alt = "Wonder Woman";
+                    document.querySelector("#feature-name-two").innerHTML = "Wonder Woman";
+                    document.querySelector("#feature-text-two").innerHTML = "An Amazon hero who fights for truth and justice.";
+                    document.querySelector("#movie-title").innerHTML = "DC Movie Pick";
+                    document.querySelector("#movie-text").innerHTML = "The Dark Knight follows Batman as he faces the Joker in Gotham.";
+                } else {
+                    location.reload();
+                }
+            }
+
+            function searchSite() {
+                var word = document.querySelector("#home-search").value.toLowerCase();
+                if (word == "batman" || word == "wolverine" || word == "joker" || word == "loki") {
+                    window.location.href = "characters.html?search=" + word;
+                } else if (word == "") {
+                    alert("Please enter a movie or character.");
+                } else {
+                    window.location.href = "movies.html?search=" + word;
+                }
+            }
+
+            themeButton.addEventListener("click", changeTheme);
+            document.querySelector("#search-button").addEventListener("click", searchSite);
+        </script>
+
+    </body>
+
+    </html>

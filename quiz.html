@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Multiverse Hub - Quiz</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body>
+
+		<header>
+			<h1 id="site-title">Marvel vs DC: Multiverse Hub</h1>
+			<nav>
+				<a href="index.html">Home</a>
+				<a href="movies.html">Movies</a>
+				<a href="characters.html">Characters</a>
+				<a class="active" href="quiz.html">Quiz</a>
+				<a href="contact.html">Contact</a>
+			</nav>
+		</header>
+
+		<main>
+
+			<section class="hero">
+				<h2>Which Character Are You?</h2>
+				<p>Answer all ten questions to meet your Multiverse match.</p>
+			</section>
+
+			<!-- Quiz form creation - Radio buttons assign the valeus -->
+			<form id="quiz-form">
+
+				<div class="quiz-question">
+					<h3>1. Pick a strength.</h3>
+					<label><input type="radio" name="q1" value="0"> Intelligence</label>
+					<label><input type="radio" name="q1" value="1"> Courage</label>
+					<label><input type="radio" name="q1" value="2"> Humour</label>
+					<label><input type="radio" name="q1" value="3"> Creativity</label>
+				</div>
+
+				<div class="quiz-question">
+					<h3>2. Where would you work?</h3>
+					<label><input type="radio" name="q2" value="0"> Gotham</label>
+					<label><input type="radio" name="q2" value="1"> Themyscira</label>
+					<label><input type="radio" name="q2" value="2"> Anywhere exciting</label>
+					<label><input type="radio" name="q2" value="3"> Asgard</label>
+				</div>
+
+				<div class="quiz-question">
+					<h3>3. Pick a tool.</h3>
+					<label><input type="radio" name="q3" value="0"> Gadgets</label>
+					<label><input type="radio" name="q3" value="1"> Magic lasso</label>
+					<label><input type="radio" name="q3" value="2"> Swords</label>
+					<label><input type="radio" name="q3" value="3"> Illusions</label>
+				</div>
+
+				<div class="quiz-question">
+					<h3>4. Friends describe you as...</h3>
+					<label><input type="radio" name="q4" value="0"> Serious</label>
+					<label><input type="radio" name="q4" value="1"> Honest</label>
+					<label><input type="radio" name="q4" value="2"> Funny</label>
+					<label><input type="radio" name="q4" value="3"> Clever</label>
+				</div>
+
+				<div class="quiz-question">
+					<h3>5. Choose a colour.</h3>
+					<label><input type="radio" name="q5" value="0"> Black</label>
+					<label><input type="radio" name="q5" value="1"> Gold</label>
+					<label><input type="radio" name="q5" value="2"> Red</label>
+					<label><input type="radio" name="q5" value="3"> Green</label>
+				</div>
+
+				<div class="quiz-question">
+					<h3>6. In a crisis, you...</h3>
+					<label><input type="radio" name="q6" value="0"> Make a plan</label>
+					<label><input type="radio" name="q6" value="1"> Protect everyone</label>
+					<label><input type="radio" name="q6" value="2"> Improvise</label>
+					<label><input type="radio" name="q6" value="3"> Find a clever shortcut</label>
+				</div>
+
+				<div class="quiz-question">
+					<h3>7. Pick a weekend activity.</h3>
+					<label><input type="radio" name="q7" value="0"> Solving mysteries</label>
+					<label><input type="radio" name="q7" value="1"> Helping the community</label>
+					<label><input type="radio" name="q7" value="2"> Telling jokes</label>
+					<label><input type="radio" name="q7" value="3"> Playing pranks</label>
+				</div>
+
+				<div class="quiz-question">
+					<h3>8. What matters most?</h3>
+					<label><input type="radio" name="q8" value="0"> Justice</label>
+					<label><input type="radio" name="q8" value="1"> Truth</label>
+					<label><input type="radio" name="q8" value="2"> Freedom</label>
+					<label><input type="radio" name="q8" value="3"> Winning</label>
+				</div>
+
+				<div class="quiz-question">
+					<h3>9. Pick a team role.</h3>
+					<label><input type="radio" name="q9" value="0"> Strategist</label>
+					<label><input type="radio" name="q9" value="1"> Leader</label>
+					<label><input type="radio" name="q9" value="2"> Wild card</label>
+					<label><input type="radio" name="q9" value="3"> Mastermind</label>
+				</div>
+
+				<div class="quiz-question">
+					<h3>10. Choose a motto.</h3>
+					<label><input type="radio" name="q10" value="0"> Be prepared</label>
+					<label><input type="radio" name="q10" value="1"> Stand for what is right</label>
+					<label><input type="radio" name="q10" value="2"> Have some fun</label>
+					<label><input type="radio" name="q10" value="3"> Keep them guessing</label>
+				</div>
+
+				<button type="submit">Submit Quiz</button>
+
+			</form>
+
+			<!-- Result box (this should stay hidden until quiz submitted) -->
+			<section id="result-box" hidden>
+				<h2 id="result-title"></h2>
+				<img id="result-image" src="images/batman.png" alt="Quiz result"> <!-- Result image - The JS replaces the default image -->
+				<p id="result-text"></p>
+				<button id="restart-button">Restart Quiz</button>
+			</section>
+
+		</main>
+
+		<footer>
+			<p>Multiverse Hub - A fan-made student project</p>
+		</footer>
+
+		<!-- JS Scripts -->
+		<script>
+			var form = document.querySelector("#quiz-form");
+			var resultBox = document.querySelector("#result-box");
+
+			function submitQuiz(event) {
+				event.preventDefault();
+				var totals = [0, 0, 0, 0];
+				for (var i = 1; i <= 10; i++) {
+					var answer = document.querySelector("input[name='q" + i + "']:checked");
+					if (answer == null) {
+						alert("Please answer all ten questions.");
+						return;
+					}
+					totals[Number(answer.value)]++;
+				}
+				var winner = 0;
+				for (var j = 1; j < totals.length; j++) {
+					if (totals[j] > totals[winner]) {
+						winner = j;
+					}
+				} 
+				var names = ["Batman", "Wonder Woman", "Deadpool", "Loki"];
+				var images = ["images/batman.png", "images/wonder-woman.jpg", "images/Deadpool.png", "images/Loki.png"];
+				var texts = [
+					"You are thoughtful, prepared and determined.",
+					"You are brave, truthful and protective.",
+					"You are funny, spontaneous and impossible to predict.",
+					"You are clever, creative and always planning your next move."
+				];
+				document.querySelector("#result-title").innerHTML = "You are " + names[winner] + "!";
+				document.querySelector("#result-image").src = images[winner];
+				document.querySelector("#result-image").alt = names[winner];
+				document.querySelector("#result-text").innerHTML = texts[winner];
+				form.hidden = true;
+				resultBox.hidden = false;
+				window.scrollTo(0, 0);
+			}
+
+            
+			function restartQuiz() {
+				form.reset();
+				form.hidden = false;
+				resultBox.hidden = true;
+			}
+
+			form.addEventListener("submit", submitQuiz);
+			document.querySelector("#restart-button").addEventListener("click", restartQuiz);
+		</script>
+
+	</body>
+
+	</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Multiverse Hub - Contact</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body>
+
+		<!-- Consistent headers -->
+		<header>
+			<h1 id="site-title">Marvel vs DC: Multiverse Hub</h1>
+			<nav>
+				<a href="index.html">Home</a>
+				<a href="movies.html">Movies</a>
+				<a href="characters.html">Characters</a>
+				<a href="quiz.html">Quiz</a>
+				<a class="active" href="contact.html">Contact</a>
+			</nav>
+		</header>
+
+		<main>
+
+			<section class="hero">
+				<h2>Contact the Hub</h2>
+				<p>Send a question, correction or character suggestion to our fan team.</p>
+			</section>
+
+			<section class="two-column">
+
+				<div class="panel">
+					<h2>Get in Touch</h2>
+					<p>This is a student front-end project, so the form does not send information to a server.</p>
+					<p><b>Email:</b> hello@multiversehub.example</p>
+					<p><b>Location:</b> Toronto, Ontario</p>
+				</div>
+
+				<form id="contact-form" class="panel contact-form">
+					<h2>Message Form</h2>
+					<label for="name">Name</label>
+					<input id="name" type="text" required>
+
+					<label for="email">Email</label>
+					<input id="email" type="email" required>
+
+					<label for="subject">Subject</label>
+					<select id="subject" required>
+						<option value="">Choose a subject</option>
+						<option>Question</option>
+						<option>Feedback</option>
+						<option>Character suggestion</option>
+					</select>
+
+					<label for="message">Message</label>
+					<textarea id="message" rows="6" required></textarea>
+
+					<button type="submit">Submit Message</button>
+					<p id="success-message" class="message" hidden>Thank you! Your message has been received.</p>
+				</form>
+
+			</section>
+
+		</main>
+
+		<footer>
+			<p>Multiverse Hub - A fan-made student project</p>
+		</footer>
+
+		<!-- Javascriptz with event listeners -->
+		<script>
+			var contactForm = document.querySelector("#contact-form");
+
+			function sendMessage(event) {
+				event.preventDefault();
+				document.querySelector("#success-message").hidden = false;
+				contactForm.reset();
+			}
+
+			contactForm.addEventListener("submit", sendMessage);
+		</script>
+
+	</body>
+
+	</html>

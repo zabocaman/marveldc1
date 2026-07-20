@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiverse Hub - Characters</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1 id="site-title">Marvel vs DC: Multiverse Hub</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="movies.html">Movies</a>
+        <a class="active" href="characters.html">Characters</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+<main>
+    <section class="hero">
+        <h2>Character Profiles</h2>
+        <p>Meet heroes, villains and unusual allies from both universes.</p>
+    </section>
+    
+    <section class="controls">
+        <input id="character-search" type="text" placeholder="Search character">
+        
+        <select id="character-filter">
+            <option value="all">All Teams</option>
+            <option value="avengers">Avengers</option>
+            <option value="justice-league">Justice League</option>
+            <option value="guardians">Guardians</option>
+            <option value="x-men">X-Men</option>
+            <option value="villains">Villains</option>
+        </select>
+
+        <select id="character-sort">
+            <option value="name">Sort by name</option>
+            <option value="power">Sort by power</option>
+            <option value="universe">Sort by universe</option>
+        </select>
+
+        <!—This is for NEW BOX ADDED HERE: Dropdown selector box for Favorite Heroes filter status -->
+        <select id="character-fav-filter">
+            <option value="all">All Characters</option>
+            <option value="favorites">⭐ Favorites Only</option>
+        </select>
+    </section>
+
+    <section id="character-grid" class="card-grid">
+        <!-- DC CHARACTERS -->
+        <article class="card character" data-name="Batman" data-team="justice-league" data-universe="dc" data-power="88">
+            <img src="images/batman.png" alt="Batman">
+            <h3>Batman</h3>
+            <span class="tag">DC</span>
+            <p class="meta-info"><strong>Alias:</strong> Bruce Wayne</p>
+            <p class="meta-info"><strong>Team:</strong> Justice League</p>
+            <p class="meta-info"><strong>Powers:</strong> Martial Arts, Gadgets, Intellect</p>
+            <button class="fav-btn">⭐ Favorite</button>
+            <details class="bio-details">
+                <summary>Expand Details</summary>
+                <p class="anim-text">Detective, martial artist and protector of Gotham.</p>
+            </details>
+        </article>
+        <article class="card character" data-name="Wonder Woman" data-team="justice-league" data-universe="dc" data-power="96">
+            <img src="images/wonder-woman.jpg" alt="Wonder Woman">
+            <h3>Wonder Woman</h3>
+            <span class="tag">DC</span>
+            <p class="meta-info"><strong>Alias:</strong> Diana Prince</p>
+            <p class="meta-info"><strong>Team:</strong> Justice League</p>
+            <p class="meta-info"><strong>Powers:</strong> Super Strength, Flight, Combat Expert</p>
+            <button class="fav-btn">⭐ Favorite</button>
+            <details class="bio-details">
+                <summary>Expand Details</summary>
+                <p class="anim-text">Amazon warrior with strength, courage and compassion.</p>
+            </details>
+        </article>
+        <article class="card character" data-name="Superman" data-team="justice-league" data-universe="dc" data-power="100">
+            <img src="images/superman.jpg" alt="Superman">
+            <h3>Superman</h3>
+            <span class="tag">DC</span>
+            <p class="meta-info"><strong>Alias:</strong> Clark Kent</p>
+            <p class="meta-info"><strong>Team:</strong> Justice League</p>
+            <p class="meta-info"><strong>Powers:</strong> Flight, Heat Vision, Invulnerability</p>
+            <button class="fav-btn">⭐ Favorite</button>
+            <details class="bio-details">
+                <summary>Expand Details</summary>
+                <p class="anim-text">Kryptonian hero and symbol of hope.</p>
+            </details>
+        </article>
+        <article class="card character" data-name="Supergirl" data-team="justice-league" data-universe="dc" data-power="98">
+            <img src="images/supergirl.jpg" alt="Supergirl">
+            <h3>Supergirl</h3>
+            <span class="tag">DC</span>
+            <p class="meta-info"><strong>Alias:</strong> Kara Zor-El</p>
+            <p class="meta-info"><strong>Team:</strong> Justice League</p>
+            <p class="meta-info"><strong>Powers:</strong> Flight, Freeze Breath, Super Strength</p>
+            <button class="fav-btn">⭐ Favorite</button>
+            <details class="bio-details">
+                <summary>Expand Details</summary>
+                <p class="anim-text">Kryptonian hero who protects Earth.</p>
+            </details>
+        </article>
+        <article class="card character" data-name="Flash" data-team="justice-league" data-universe="dc" data-power="94">
+            <img src="images/flash.jpg" alt="Flash">
+            <h3>Flash</h3>
+            <span class="tag">DC</span>
+            <p class="meta-info"><strong>Alias:</strong> Barry Allen</p>
+            <p class="meta-info"><strong>Team:</strong> Justice League</p>
+            <p class="meta-info"><strong>Powers:</strong> Super Speed, Time Travel</p>
+            <button class="fav-btn">⭐ Favorite</button>
+            <details class="bio-details">
+                <summary>Expand Details</summary>
+                <p class="anim-text">A speedster connected to the Speed Force.</p>
+            </details>
+        </article>
+        <article class="card character" data-name="Joker" data-team="villains" data-universe="dc" data-power="72">
+            <img src="images/joker.jpg" alt="Joker">
+            <h3>Joker</h3>
+            <span class="tag">DC</span>
+            <p class="meta-info"><strong>Alias:</strong> Unknown</p>
+            <p class="meta-info"><strong>Team:</strong> Villains</p>
+            <p class="meta-info"><strong>Powers:</strong> Mastermind, Toxic Gas Expert</p>
+            <button class="fav-btn">⭐ Favorite</button>
+            <details class="bio-details">
+                <summary>Expand Details</summary>
+                <p class="anim-text">Gotham villain known for chaos and tricks.</p>
+            </details>
+        </article>
+        <article class="card character" data-name="Shazam" data-team="justice-league" data-universe="dc" data-power="97">
+            <img src="images/shazam.jpg" alt="Shazam">
+            <h3>Shazam</h3>
+            <span class="tag">DC</span>
+            <p class="meta-info"><strong>Alias:</strong> Billy Batson</p>
+            <p class="meta-info"><strong>Team:</strong> Justice League</p>
+            <p class="meta-info"><strong>Powers:</strong> Magic Lightning, Flight, Strength</p>
+            <button class="fav-btn">⭐ Favorite</button>
+            <details class="bio-details">
+                <summary>Expand Details</summary>
+                <p class="anim-text">A young hero transformed by a magic word.</p>
+            </details>
+        </article>
+        <article class="card character" data-name="Batwoman" data-team="justice-league" data-universe="dc" data-power="82">
+            <img src="images/batwoman.jpg" alt="Batwoman">
+            <h3>Batwoman</h3>
+            <span class="tag">DC</span>
+            <p class="meta-info"><strong>Alias:</strong> Ryan Wilder</p>
+            <p class="meta-info"><strong>Team:</strong> Justice League</p>
+            <p class="meta-info"><strong>Powers:</strong> Hand-to-Hand Combat, Stealth</p>
+            <button class="fav-btn">⭐ Favorite</button>
+            <details class="bio-details">
+                <summary>Expand Details</summary>
+                <p class="anim-text">A determined masked protector of Gotham.</p>
+            </details>
+        </article>
+        <article class="card character" data-name="Robin" data-team="justice-league" data-universe="dc" data-power="78">
+            <img src="images/robin.jpg" alt="Robin">
+            <h3>Robin</h3>
+            <span class="tag">DC</span>
+            <p class="meta-info"><strong>Alias:</strong> Tim Drake</p>
+            <p class="meta-info"><strong>Team:</strong> Justice League</p>
+            <p class="meta-info"><strong>Powers:</strong> Acrobatics, Martial Arts</p>
+            <button class="fav-btn">⭐ Favorite</button>
+            <details class="bio-details">
+                <summary>Expand Details</summary>
+                <p class="anim-text">Batman's skilled and brave crime-fighting partner.</p>
+            </details>
+        </article>
+        <article class="card character" data-name="Krypto" data-team="justice-league" data-universe="dc" data-power="90">
+            <img src="images/krypto-the-superdog.jpg" alt="Krypto">
+            <h3>Krypto</h3>
+            <span class="tag">DC</span>
+            <p class="meta-info"><strong>Alias:</strong> Bark Kent</p>
+            <p class="meta-info"><strong>Team:</strong> Justice League</p>
+            <p class="meta-info"><strong>Powers:</strong> Enhanced Senses, Flight</p>
+            <button class="fav-btn">⭐ Favorite</button>
+            <details class="bio-details">
+                <summary>Expand Details</summary>
+                <p class="anim-text">Superman's loyal super-powered dog.</p>
+            </details>
+        </article>
+
+        <!-- This is for MARVEL CHARACTERS -->
+        <article class="card character" data-name="Wolverine" data-team="x-men" data-universe="marvel" data-power="91">
+            <img src="images/Wolverine.png" alt="Wolverine">
+            <h3>Wolverine</h3>
+            <span class="tag">Marvel</span>
+            <p class="meta-info"><strong>Alias:</strong> Logan</p>
+            <p class="meta-info"><strong>Team:</strong> X-Men</p>
+            <p class="meta-info"><strong>Powers:</strong> Regeneration, Adamantium Claws</p>
+            <button class="fav-btn">⭐ Favorite</button>
+            <details class="bio-details">
+                <summary>Expand Details</summary>
+                <p class="anim-text">X-Man with healing powers and adamantium claws.</p>
+            </details>
+        </article>
+        <article class="card character" data-name="Professor X" data-team="x-men" data-universe="marvel" data-power="95">
+            <img src="images/Professor-X.png" alt="Professor X">
+            <h3>Professor X</h3>
+            <span class="tag">Marvel</span>
+            <p class="meta-info"><strong>Alias:</strong> Charles Xavier</p>
+            <p class="meta-info"><strong>Team:</strong> X-Men</p>
+            <p class="meta-info"><strong>Powers:</strong> Omega Telepathy, Mind Control</p>
+            <button class="fav-btn">⭐ Favorite</button>
+            <details class="bio-details">
+                <summary>Expand Details</summary>
+                <p class="anim-text">Telepath and founder of the X-Men.</p>
+            </details>
+        </article>
+        <article class="card character" data-name="Magneto" data-team="villains" data-universe="marvel" data-power="97">
+            <img src="images/magneto.jpg" alt="Magneto">
+            <h3>Magneto</h3>
+            <span class="tag">Marvel</span>
+            <p class="meta-info"><strong>Alias:</strong> Erik Lehnsherr</p>
+            <p class="meta-info"><strong>Team:</strong> Villains</p>
+            <p class="meta-info"><strong>Powers:</strong> Magnetism Manipulation</p>
+            <button class="fav-btn">⭐ Favorite</button>
+            <details class="bio-details">
+                <summary>Expand Details</summary>
+                <p class="anim-text">Powerful mutant who controls magnetic fields.</p>
+            </details>
+        </article>
+        <article class="card character" data-name="Loki" data-team="villains" data-universe="marvel" data-power="89">
+            <img src="images/Loki.png" alt="Loki">
+            <h3>Loki</h3>
+            <span class="tag">Marvel</span>
+            <p class="meta-info"><strong>Alias:</strong> Loki Laufeyson</p>
+            <p class="meta-info"><strong>Team:</strong> Villains</p>
+            <p class="meta-info"><strong>Powers:</strong> Illusion Casting, Sorcery</p>
+            <button class="fav-btn">⭐ Favorite</button>
+            <details class="bio-details">
+                <summary>Expand Details</summary>
+                <p class="anim-text">Asgardian trickster with magic and many schemes.</p>
+            </details>
+        </article>
+        <article class="card character" data-name="Deadpool" data-team="avengers" data-universe="marvel" data-power="86">
+            <img src="images/Deadpool.png" alt="Deadpool">
+            <h3>Deadpool</h3>
+            <span class="tag">Marvel</span>
+            <p class="meta-info"><strong>Alias:</strong> Wade Wilson</p>
+            <p class="meta-info"><strong>Team:</strong> Avengers</p>
+            <p class="meta-info"><strong>Powers:</strong> Infinite Healing, Weapon Master</p>
+            <button class="fav-btn">⭐ Favorite</button>
+            <details class="bio-details">
+                <summary>Expand Details</summary>
+                <p class="anim-text">Unpredictable fighter with rapid healing.</p>
+            </details>
+        </article>
+        <article class="card character" data-name="Jean Grey" data-team="x-men" data-universe="marvel" data-power="100">
+            <img src="images/Jean-Grey.png" alt="Jean Grey">
+            <h3>Jean Grey</h3>
+            <span class="tag">Marvel</span>
+            <p class="meta-info"><strong>Alias:</strong> Marvel Girl</p>
+            <p class="meta-info"><strong>Team:</strong> X-Men</p>
+            <p class="meta-info"><strong>Powers:</strong> Telekinesis, Phoenix Force</p>
+            <button class="fav-btn">⭐ Favorite</button>
+            <details class="bio-details">
+                <summary>Expand Details</summary>
+                <p class="anim-text">Telepathic and telekinetic member of the X-Men.</p>
+            </details>
+        </article>
+        <article class="card character" data-name="Cyclops" data-team="x-men" data-universe="marvel" data-power="85">
+            <img src="images/Cyclops.png" alt="Cyclops">
+            <h3>Cyclops</h3>
+            <span class="tag">Marvel</span>
+            <p class="meta-info"><strong>Alias:</strong> Scott Summers</p>
+            <p class="meta-info"><strong>Team:</strong> X-Men</p>
+            <p class="meta-info"><strong>Powers:</strong> Optic Blasts</p>
+            <button class="fav-btn">⭐ Favorite</button>
+            <details class="bio-details">
+                <summary>Expand Details</summary>
+                <p class="anim-text">X-Men leader with powerful optic blasts.</p>
+            </details>
+        </article>
+        <article class="card character" data-name="Nightcrawler" data-team="x-men" data-universe="marvel" data-power="84">
+            <img src="images/Nightcrawler.png" alt="Nightcrawler">
+            <h3>Nightcrawler</h3>
+            <span class="tag">Marvel</span>
+            <p class="meta-info"><strong>Alias:</strong> Kurt Wagner</p>
+            <p class="meta-info"><strong>Team:</strong> X-Men</p>
+            <p class="meta-info"><strong>Powers:</strong> Teleportation, Shadow Camouflage</p>
+            <button class="fav-btn">⭐ Favorite</button>
+            <details class="bio-details">
+                <summary>Expand Details</summary>
+                <p class="anim-text">Kind-hearted mutant who can teleport.</p>
+            </details>
+        </article>
+        <article class="card character" data-name="Rogue" data-team="x-men" data-universe="marvel" data-power="93">
+            <img src="images/rogue.jpg" alt="Rogue">
+            <h3>Rogue</h3>
+            <span class="tag">Marvel</span>
+            <p class="meta-info"><strong>Alias:</strong> Anna Marie</p>
+            <p class="meta-info"><strong>Team:</strong> X-Men</p>
+            <p class="meta-info"><strong>Powers:</strong> Power Absorption via Touch</p>
+            <button class="fav-btn">⭐ Favorite</button>
+            <details class="bio-details">
+                <summary>Expand Details</summary>
+                <p class="anim-text">Mutant who absorbs powers through touch.</p>
+            </details>
+        </article>
+        <article class="card character" data-name="Jubilee" data-team="x-men" data-universe="marvel" data-power="76">
+            <img src="images/jubilee.jpg" alt="Jubilee">
+            <h3>Jubilee</h3>
+            <span class="tag">Marvel</span>
+            <p class="meta-info"><strong>Alias:</strong> Jubilation Lee</p>
+            <p class="meta-info"><strong>Team:</strong> X-Men</p>
+            <p class="meta-info"><strong>Powers:</strong> Pyrotechnic Energy Blasts</p>
+            <button class="fav-btn">⭐ Favorite</button>
+            <details class="bio-details">
+                <summary>Expand Details</summary>
+                <p class="anim-text">Young X-Man who creates bright energy blasts.</p>
+            </details>
+        </article>
+        <article class="card character" data-name="Quicksilver" data-team="avengers" data-universe="marvel" data-power="87">
+            <img src="images/Quicksilver.png" alt="Quicksilver">
+            <h3>Quicksilver</h3>
+            <span class="tag">Marvel</span>
+            <p class="meta-info"><strong>Alias:</strong> Pietro Maximoff</p>
+            <p class="meta-info"><strong>Team:</strong> Avengers</p>
+            <p class="meta-info"><strong>Powers:</strong> Superhuman Speed</p>
+            <button class="fav-btn">⭐ Favorite</button>
+            <details class="bio-details">
+                <summary>Expand Details</summary>
+                <p class="anim-text">Mutant able to move at superhuman speed.</p>
+            </details>
+        </article>
+        <article class="card character" data-name="Warren Peace" data-team="villains" data-universe="marvel" data-power="80">
+            <img src="images/warren-peace.jpg" alt="Warren Peace">
+            <h3>Warren Peace</h3>
+            <span class="tag">Marvel</span>
+            <p class="meta-info"><strong>Alias:</strong> Pyrokinesis Kid</p>
+            <p class="meta-info"><strong>Team:</strong> Villains</p>
+            <p class="meta-info"><strong>Powers:</strong> Fire Manipulation</p>
+            <button class="fav-btn">⭐ Favorite</button>
+            <details class="bio-details">
+                <summary>Expand Details</summary>
+                <p class="anim-text">A fiery character with a rebellious personality.</p>
+            </details>
+        </article>
+    </section>
+    <p id="no-characters" class="message" hidden>No character found.</p>
+</main>
+<footer><p>Multiverse Hub - A fan-made student project</p></footer>
+
+<script>
+var search = document.querySelector("#character-search"); 
+var filter = document.querySelector("#character-filter"); 
+var sort = document.querySelector("#character-sort");
+var favFilter = document.querySelector("#character-fav-filter"); // Connected new element
+var grid = document.querySelector("#character-grid");
+
+// This is for  LIVE SEARCH, TEAM FILTER & ACTIVE FAVORITE HERO FILTER
+function updateCharacters(){
+    var cards = document.querySelectorAll(".character");
+    var found = 0;
+    for(var i=0; i<cards.length; i++){
+        var matchName = cards[i].getAttribute("data-name").toLowerCase().indexOf(search.value.toLowerCase()) >= 0;
+        var matchTeam = filter.value == "all" || cards[i].getAttribute("data-team") == filter.value;
+        
+        // Logical conditional evaluation checks if class is active[cite: 5, 7]
+        var matchFav = favFilter.value == "all" || cards[i].classList.contains("favorited");
+
+        if(matchName && matchTeam && matchFav){
+            cards[i].style.display = "block";
+            found++;
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+    document.querySelector("#no-characters").hidden = found != 0;
+}
+
+function sortCharacters(){
+    var cards = Array.from(document.querySelectorAll(".character"));
+    cards.sort(function(a, b){
+        if(sort.value == "power"){
+            return Number(b.getAttribute("data-power")) - Number(a.getAttribute("data-power"));
+        }
+        if(sort.value == "universe"){
+            return a.getAttribute("data-universe").localeCompare(b.getAttribute("data-universe"));
+        }
+        return a.getAttribute("data-name").localeCompare(b.getAttribute("data-name"));
+    });
+    for(var i=0; i<cards.length; i++){
+        grid.appendChild(cards[i]);
+    }
+}
+
+// TOGGLE HIGHLIGHT STATE AND INSTANTLY TRIGGER FILTER VIEW UPDATE
+grid.addEventListener("click", function(event) {
+    if (event.target.classList.contains("fav-btn")) {
+        var cardContainer = event.target.closest(".card");
+        if (cardContainer) {
+            cardContainer.classList.toggle("favorited");
+            updateCharacters(); // Refreshes grid automatically if favorites view mode is on
+        }
+    }
+});
+
+search.addEventListener("keyup", updateCharacters);
+filter.addEventListener("change", updateCharacters);
+sort.addEventListener("change", sortCharacters);
+favFilter.addEventListener("change", updateCharacters); // New filter interaction connection
+
+var words = new URLSearchParams(window.location.search).get("search");
+if(words){
+    search.value = words;
+    updateCharacters();
+}
+</script>
+</body>
+</html>

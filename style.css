@@ -1,0 +1,380 @@
+/* Global Styles - Applicable across pages */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+	min-height: 100vh;
+	background-color: #eeeeee;
+	background-image: url("images/background.avif");
+	background-repeat: repeat;
+	background-size: auto;
+	background-attachment: fixed;
+	background-position: top left;
+	color: #171717;
+}
+
+
+/* All headers and navigations */
+
+header {
+	background: #222222;
+	color: white;
+	border-bottom: 8px solid #b51f2e;
+}
+
+#site-title {
+	margin: 0;
+	padding: 22px 5%;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+nav {
+	padding: 0 5% 15px;
+}
+
+nav a {
+	color: white;
+	display: inline-block;
+	margin-right: 20px;
+	padding: 8px 0;
+	font-weight: bold;
+}
+
+nav a:hover,
+.active {
+	color: #ffcf33;
+}
+
+
+/* Layout Helpers / Panels - Use the selector to change the colours */
+
+main {
+	width: 90%;
+	max-width: 1100px;
+	margin: 25px auto;
+	min-height: 70vh;
+}
+
+.movies-page main {
+	width: 90%;
+	max-width: 1100px;
+	margin: 25px auto;
+}
+
+.movies-page .card-grid {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.hero {
+	background: white;
+	border: 4px solid #222;
+	padding: 35px;
+	margin-bottom: 25px;
+	text-align: center;
+}
+
+.hero h2 {
+	font-size: 34px;
+	margin-top: 0;
+}
+
+
+/* Button and conteol settings. Should we change this since it's Marvel colours? */
+
+.button,
+button {
+	background: #b51f2e;
+	color: white;
+	border: 2px solid #222;
+	padding: 10px 16px;
+	font-weight: bold;
+	cursor: pointer;
+	display: inline-block;
+}
+
+/*.button:hover,
+button:hover {
+	background: #222;
+}
+*/
+
+.controls {
+	background: white;
+	border: 3px solid #222;
+	padding: 15px;
+	margin-bottom: 20px;
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+
+input,
+select,
+textarea {
+	border: 2px solid #555;
+	padding: 9px;
+	font-size: 16px;
+}
+
+.video-container {
+	background: white;
+	border: 3px solid #222;
+	padding: 16px;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.video-container iframe {
+	width: 100%;
+	max-width: 1013px;
+	height: auto;
+	aspect-ratio: 1013 / 570;
+	border: 0;
+}
+
+
+/* Grids / Card / Grid Cards and such */
+
+.card-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 18px;
+}
+
+.card {
+	background: white;
+	border: 3px solid #222;
+	padding: 14px;
+	overflow: hidden;
+}
+
+.card img {
+	width: 100%;
+	max-width: 100%;
+	height: 220px;
+	object-fit: contain;
+	object-position: center;
+	display: block;
+	background: #f3f3f3;
+	border: 1px solid #555;
+}
+
+.card h3 {
+	color: #b51f2e;
+	margin-bottom: 6px;
+}
+
+.tag {
+	background: #222;
+	color: white;
+	padding: 4px 7px;
+	display: inline-block;
+}
+
+.details {
+	border-top: 2px solid #aaa;
+	margin-top: 10px;
+	padding-top: 10px;
+}
+
+/* Space above the movie/character detail buttons so they don't sit flush to content. Challenge 1001 we had encountered */
+.detail-button {
+	margin-top: 12px;
+}
+
+
+/* The themed variations. Hide the container border here */
+
+.dc-theme header {
+	border-color: #1769aa;
+}
+
+.dc-theme .button,
+.dc-theme button {
+	background: #1769aa;
+}
+
+.dc-theme .card h3 {
+	color: #1769aa;
+}
+
+
+/* Panels and layout settings */
+
+.two-column {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+
+.panel {
+	background: white;
+	border: 3px solid #222;
+	padding: 20px;
+}
+
+
+/* quizzzz page. Should we make it fancy? */
+
+.quiz-question {
+	background: white;
+	border: 3px solid #222;
+	padding: 15px;
+	margin-bottom: 15px;
+}
+
+.quiz-question label {
+	display: block;
+	margin: 9px 0;
+}
+
+#result-box {
+	background: #fff4bf;
+	border: 4px solid #222;
+	padding: 20px;
+	margin-top: 20px;
+	text-align: center ;
+}
+
+#result-box img {
+	max-width: 260px;
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+	border: 3px solid #222;
+}
+
+
+/* Contact form -  */
+
+.contact-form label {
+	font-weight: bold;
+	display: block;
+	margin-top: 14px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+	width: 100%;
+}
+
+.message {
+	font-weight: bold;
+	padding: 12px;
+	border: 2px solid #222;
+	margin-top: 15px;
+}
+
+
+/* footer */
+
+footer {
+	background: #222;
+	color: white;
+	text-align: center ;
+	padding: 20px;
+}
+
+/* this is for the ligning controls row using established flex direction layouts */
+.controls {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    flex-wrap: wrap; /* Keeps it responsive on smaller laptop views */
+}
+
+/* this is for explicit size standard rule overrides for new select box elements */
+.controls select, .controls input {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #777;
+    border-radius: 4px;
+}
+
+.meta-info {
+    margin: 4px 0;
+    font-size: 0.9em;
+    color: #444;
+}
+
+.card.favorited {
+    background-color: #fffde6 !important;
+    border: 2px solid #ffd700 !important;
+}
+
+.fav-btn {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    color: #000000 !important; 
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 10px 0;
+    display: block;
+    font-size: 0.85em;
+    transition: background-color 0.2s;
+}
+
+.fav-btn:hover {
+    background-color: #e5e5e5;
+}
+
+.bio-details summary {
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 8px;
+    color: #0066cc;
+    outline: none;
+}
+
+.bio-details[open] .anim-text {
+    animation: slideFadeInEffect 0.4s ease-out forwards;
+}
+
+@keyframes slideFadeInEffect {
+    0% {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design - let's make it mobile-friendly. Media queries learned here: https://www.w3schools.com/css/css_rwd_mediaqueries.asp */
+
+@media (max-width: 800px) {
+	.card-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.two-column {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 520px) {
+	.card-grid {
+		grid-template-columns: 1fr;
+	}
+
+	nav a {
+		display: block;
+	}
+
+	.hero {
+		padding: 20px;
+	}
+}

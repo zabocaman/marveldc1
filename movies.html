@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Multiverse Hub - Movies</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body class="movies-page">
+
+		<header>
+			<h1 id="site-title">Marvel vs DC: Multiverse Hub</h1>
+			<nav>
+				<a href="index.html">Home</a>
+				<a class="active" href="movies.html">Movies</a>
+				<a href="characters.html">Characters</a>
+				<a href="quiz.html">Quiz</a>
+				<a href="contact.html">Contact</a>
+			</nav>
+		</header>
+
+		<main>
+
+			<!-- The main part of this page - Where we want people to focus first -->
+			<section class="hero">
+				<h2>Movie Library</h2>
+				<p>Search, filter and sort a small collection of fan favourites.</p>
+			</section>
+
+			<!-- some cool controls -->
+			<section class="controls">
+				<input id="movie-search" type="text" placeholder="Search title">
+				<select id="universe-filter">
+					<option value="all">All universes</option>
+					<option value="marvel">Marvel</option>
+					<option value="dc">DC</option>
+				</select>
+				<select id="movie-sort">
+					<option value="name">Sort by name</option>
+					<option value="year">Sort by newest</option>
+					<option value="rating">Sort by rating</option>
+				</select>
+			</section>
+
+			<!-- Movie grid - layout via css -->
+			<section id="movie-grid" class="card-grid">
+
+				<article class="card movie" data-name="Avengers Endgame" data-universe="marvel" data-year="2019" data-rating="8.4">
+					<span class="tag">Marvel</span>
+					<h3>Avengers: Endgame</h3>
+					<p>2019 | Rating: 8.4</p>
+                    <img src="https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/7b350a2f-0b3e-4033-8125-34c4d67e3bbe/compose?aspectRatio=1.78&format=webp&width=1200" alt="Avengers: Endgame">
+                   <!-- <img src="" alt="Avengers: Endgame">  --><!-- Image removed for now -->
+					<button class="detail-button">Show Details</button>
+					<div class="details" hidden>
+						<p>The Avengers reunite after a devastating loss.</p>
+						<p><b>Directors:</b> Anthony and Joe Russo</p>
+                        
+					</div>
+				</article>
+
+				<article class="card movie" data-name="Black Panther" data-universe="marvel" data-year="2018" data-rating="7.3">
+					<span class="tag">Marvel</span>
+					<h3>Black Panther</h3>
+					<p>2018 | Rating: 7.3</p>
+                    <img src="https://imageio.forbes.com/blogs-images/scottmendelson/files/2017/10/DMQuyI5V4AAUHP0.jpg?format=jpg&height=600&width=1200&fit=bounds">
+					<button class="detail-button">Show Details</button>
+					<div class="details" hidden>
+						<p>T'Challa returns home to lead Wakanda.</p>
+						<p><b>Director:</b> Ryan Coogler</p>
+					</div>
+				</article>
+
+				<article class="card movie" data-name="The Dark Knight" data-universe="dc" data-year="2008" data-rating="9.0">
+					<span class="tag">DC</span>
+					<h3>The Dark Knight</h3>
+					<p>2008 | Rating: 9.0</p>
+                     <img src="https://www.studioremarkable.com/wp-content/uploads/2012/08/Dark-Knight-Trilogy.jpg">
+					<button class="detail-button">Show Details</button>
+					<div class="details" hidden>
+						<p>Batman faces a criminal mastermind called the Joker.</p>
+						<p><b>Director:</b> Christopher Nolan</p>
+					</div>
+				</article>
+
+				<article class="card movie" data-name="Wonder Woman" data-universe="dc" data-year="2017" data-rating="7.4">
+					<span class="tag">DC</span>
+					<h3>Wonder Woman</h3>
+					<p>2017 | Rating: 7.4</p>
+                    <img src="https://geekdad.com/wp-content/uploads/2017/05/Wonder-Woman-Tank.jpg">
+					<button class="detail-button">Show Details</button>
+					<div class="details" hidden>
+						<p>Diana leaves Themyscira to help stop a world war.</p>
+						<p><b>Director:</b> Patty Jenkins</p>
+					</div>
+				</article>
+
+				<article class="card movie" data-name="Guardians of the Galaxy" data-universe="marvel" data-year="2014" data-rating="8.0">
+					<span class="tag">Marvel</span>
+					<h3>Guardians of the Galaxy</h3>
+					<p>2014 | Rating: 8.0</p>
+                    <img src="https://static0.colliderimages.com/wordpress/wp-content/uploads/2023/05/x-movies-to-watch-before-guardians-of-the-galaxy.jpg">
+					<button class="detail-button">Show Details</button>
+					<div class="details" hidden>
+						<p>A group of space outlaws must work together.</p>
+						<p><b>Director:</b> James Gunn</p>
+					</div>
+				</article>
+
+				<article class="card movie" data-name="Man of Steel" data-universe="dc" data-year="2013" data-rating="7.1">
+					<span class="tag">DC</span>
+					<h3>Man of Steel</h3>
+					<p>2013 | Rating: 7.1</p>
+                    <img src="https://i0.wp.com/manapop.com/wp-content/uploads/2016/03/Man-of-steel-logo.jpg?fit=770%2C428&ssl=1">
+					<button class="detail-button">Show Details</button>
+					<div class="details" hidden>
+						<p>Clark Kent learns what it means to become Superman.</p>
+						<p><b>Director:</b> Zack Snyder</p>
+					</div>
+				</article>
+
+			</section>
+
+			<p id="no-movies" class="message" hidden>No movies found.</p>
+
+		</main>
+
+        <footer>
+			<p>Multiverse Hub - A fan-made student project</p>
+		</footer>
+
+		<!-- JS Code below  -->
+		<script>
+			var search = document.querySelector("#movie-search");
+			var filter = document.querySelector("#universe-filter");
+			var sort = document.querySelector("#movie-sort");
+
+			function updateMovies() {
+				var cards = document.querySelectorAll(".movie");
+				var found = 0;
+				for (var i = 0; i < cards.length; i++) {
+					var matchName = cards[i].getAttribute("data-name").toLowerCase().indexOf(search.value.toLowerCase()) >= 0;
+					var matchUniverse = filter.value == "all" || cards[i].getAttribute("data-universe") == filter.value;
+					if (matchName && matchUniverse) {
+						cards[i].style.display = "block";
+						found++;
+					} else {
+						cards[i].style.display = "none";
+					}
+				}
+				document.querySelector("#no-movies").hidden = found != 0;
+			}
+
+			function sortMovies() {
+				var grid = document.querySelector("#movie-grid");
+				var cards = Array.from(document.querySelectorAll(".movie"));
+				cards.sort(function(a, b) {
+					if (sort.value == "year" || sort.value == "rating") {
+						return Number(b.getAttribute("data-" + sort.value)) - Number(a.getAttribute("data-" + sort.value));
+					}
+					return a.getAttribute("data-name").localeCompare(b.getAttribute("data-name"));
+				});
+				for (var i = 0; i < cards.length; i++) {
+					grid.appendChild(cards[i]);
+				}
+			}
+
+			function showDetails() {
+				var box = this.nextElementSibling;
+				box.hidden = !box.hidden;
+				if (box.hidden) {
+					this.innerHTML = "Show Details";
+				} else {
+					this.innerHTML = "Hide Details";
+				}
+			}
+
+			search.addEventListener("keyup", updateMovies);
+			filter.addEventListener("change", updateMovies);
+			sort.addEventListener("change", sortMovies);
+			var buttons = document.querySelectorAll(".detail-button");
+			for (var i = 0; i < buttons.length; i++) {
+				buttons[i].addEventListener("click", showDetails);
+			}
+			var words = new URLSearchParams(window.location.search).get("search");
+			if (words) {
+				search.value = words;
+				updateMovies();
+			}
+		</script>
+
+	</body>
+
+	</html>
